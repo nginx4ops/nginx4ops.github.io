@@ -1,3 +1,21 @@
+# Begin installation
+
+echo "===================================================="
+echo "=           Cài đặt wordpress tự động              ="
+echo "=                                                  ="
+echo "=                   By Vũ Đạt                      ="
+echo "=                  fb.com/bang.lanh.hp             ="
+echo "=                                                  ="     
+echo "=                                                  ="
+echo "=                                                  ="
+echo "=                                                  ="
+echo "=                                                  =" 
+echo "=                                                  ="
+echo "=                                                  ="
+echo "=                  Cài đặt...                      ="
+echo "=                                                  ="
+echo "===================================================="
+read -p " nhấn [Enter] để tiếp tục..."
 cd ${OPENSHIFT_REPO_DIR}www
 rm index.php && wget https://wordpress.org/latest.zip && unzip latest.zip && cp -r wordpress/* ${OPENSHIFT_REPO_DIR}www   && rm -rf wordpress && rm -rf latest.zip
 echo " wordpress đã download xong. Nhập thông số db và tiến hành cài đặt wordpress thông qua domain(v.d: tenmiencuaban.com) "
