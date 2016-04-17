@@ -15,6 +15,7 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
+echo "Vui lòng cài Cartridges mysql 5.5 và phpmyadmin 4.0 để trước khi tiến hành cài đặt wordpress.
 read -p " nhấn [Enter] để tiếp tục..."
 cd ${OPENSHIFT_REPO_DIR}www
 rm index.php && wget https://wordpress.org/latest.zip && unzip latest.zip && cp -r wordpress/* ${OPENSHIFT_REPO_DIR}www   && rm -rf wordpress && rm -rf latest.zip
