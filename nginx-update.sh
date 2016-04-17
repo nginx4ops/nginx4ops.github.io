@@ -17,7 +17,7 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
-read " vào http://nginx.org để xem phiên bản nginx mới nhất"
+echo " vào http://nginx.org để xem phiên bản nginx mới nhất"
 read -p " nhấn [Enter] để tiếp tục..."
 cp ${OPENSHIFT_DATA_DIR}conf/nginx.conf ${OPENSHIFT_DATA_DIR}conf/nginx.conf.bak
 read -p "Nhap phien ban nginx (v.d 1.9.13) : " NGINX_VERSION

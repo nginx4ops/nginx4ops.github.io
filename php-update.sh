@@ -17,7 +17,7 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
-read  " vào http://php.net/downloads.php để xem phiên bản php mới nhất"
+echo  " vào http://php.net/downloads.php để xem phiên bản php mới nhất"
 read -p " nhấn [Enter] để tiếp tục..."
 read -p "Nhap phien ban php (v.d 7.0.5) : " PHP_VERSION
 cd /tmp

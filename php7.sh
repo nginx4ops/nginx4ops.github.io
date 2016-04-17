@@ -4,7 +4,7 @@
 # Begin installation
 
 echo "===================================================="
-echo "=  NGINX 1.9 + PHP 7.0 + wordpress Cho Openshift ！ ="
+echo "=  NGINX 1.9 + PHP 7.0 + wordpress Cho Openshift!  ="
 echo "=                                                  ="
 echo "=                                                  ="
 echo "=                                                  ="
@@ -18,8 +18,8 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
-read " vào http://nginx.org để xem phiên bản nginx mới nhất"
-read  " vào http://php.net/downloads.php để xem phiên bản php mới nhất"
+echo " vào http://nginx.org để xem phiên bản nginx mới nhất"
+echo  " vào http://php.net/downloads.php để xem phiên bản php mới nhất"
 read -p " nhấn [Enter] để tiếp tục..."
 unset TMOUT
 read -p "Nhập phiên bản nginx (v.d 1.9.13) : " NGINX_VERSION
