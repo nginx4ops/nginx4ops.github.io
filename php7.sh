@@ -133,5 +133,5 @@ gear stop
 gear start
 echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất."
 read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh ./wp.sh .Nhấn [enter] để hoàn tất quá trình cài đặt"
-wget http://nginx4ops.github.io/wp.sh chmod +x wp.sh && ./wp.sh
+wget http://nginx4ops.github.io/wp.sh chmod +x wp.sh
 
