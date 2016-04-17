@@ -3,7 +3,7 @@ unset TMOUT
 # Begin update
 
 echo "===================================================="
-echo "=   PHP 7 UPDATE！                                 ="
+echo "=                PHP 7 UPDATE！                    ="
 echo "=                                                  ="
 echo "=                                                  ="
 echo "=                                                  ="
@@ -17,11 +17,12 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
-sleep 3
+read  " vào http://php.net/downloads.php để xem phiên bản php mới nhất"
+read -p " nhấn [Enter] để tiếp tục..."
 read -p "Nhap phien ban php (v.d 7.0.5) : " PHP_VERSION
 cd /tmp
 rm -rf *
-wget -O libmcrypt-2.5.8.tar.gz http://vandat6x.github.io/libmcrypt-2.5.8.tar.gz
+wget -O libmcrypt-2.5.8.tar.gz http://nginx4ops.github.io/libmcrypt-2.5.8.tar.gz
 tar xzf libmcrypt-2.5.8.tar.gz
 cd libmcrypt-2.5.8
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
@@ -30,19 +31,19 @@ cd libltdl
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local --enable-ltdl-install
 make -j && make install
 cd ../..
-wget -O mhash-0.9.9.9.tar.gz http://vandat6x.github.io/mhash-0.9.9.9.tar.gz
+wget -O mhash-0.9.9.9.tar.gz http://nginx4ops.github.io/mhash-0.9.9.9.tar.gz
 tar zxvf mhash-0.9.9.9.tar.gz
 cd mhash-0.9.9.9
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://vandat6x.github.io/re2c-0.13.7.5.tar.gz
+wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://nginx4ops.github.io/re2c-0.13.7.5.tar.gz
 tar xzf re2c-0.13.7.5.tar.gz
 cd re2c-0.13.7.5
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j4 && make install
 cd ..
-wget -O mcrypt-2.6.8.tar.gz http://vandat6x.github.io/mcrypt-2.6.8.tar.gz
+wget -O mcrypt-2.6.8.tar.gz http://nginx4ops.github.io/mcrypt-2.6.8.tar.gz
 tar xzf mcrypt-2.6.8.tar.gz
 cd mcrypt-2.6.8
 export LDFLAGS="-L${OPENSHIFT_DATA_DIR}usr/local/lib -L/usr/lib"

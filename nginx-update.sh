@@ -3,7 +3,7 @@ unset TMOUT
 # Begin update
 
 echo "===================================================="
-echo "=  NGINX 1.9 update                                ="
+echo "=                NGINX 1.9 update                  ="
 echo "=                                                  ="
 echo "=                                                  ="
 echo "=                                                  ="
@@ -17,14 +17,14 @@ echo "=                                                  ="
 echo "=                  Cài đặt...                      ="
 echo "=                                                  ="
 echo "===================================================="
-read -p " nhan [Enter] de tiep tuc..."
+read " vào http://nginx.org để xem phiên bản nginx mới nhất"
+read -p " nhấn [Enter] để tiếp tục..."
 cp ${OPENSHIFT_DATA_DIR}conf/nginx.conf ${OPENSHIFT_DATA_DIR}conf/nginx.conf.bak
 read -p "Nhap phien ban nginx (v.d 1.9.13) : " NGINX_VERSION
 cd $OPENSHIFT_TMP_DIR
 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 tar xzf nginx-${NGINX_VERSION}.tar.gz
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
-#wget http://exim.mirror.fr/pcre/pcre-8.38.tar.gz
+wget http://nginx4ops.github.io/pcre-8.38.tar.gz
 tar xzf pcre-8.38.tar.gz
 git clone https://github.com/FRiCKLE/ngx_cache_purge.git
 git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
