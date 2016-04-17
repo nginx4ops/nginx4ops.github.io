@@ -44,9 +44,9 @@ div.bd {width: 35em;margin: 0 auto;font-family: Tahoma, Verdana, Arial, sans-ser
 <h1>NGINX 1.9 + PHP 7.0 Cho Openshift ！</h1>
 <p > Chào bạn. Cảm ơn các ban đã sự dụng bash shell cài đặt tự động  Nginx 1.9.X + PHP 7.0  của tôi</p> 
 <br />Tập tin cấu hình của nginx  app-root/data/conf，tập tin cấu hình  PHP 7  app-root/data/etc, upload code lên  app-root/runtime/repo/www，<br />
-Nginx update: cd /tmp && wget http://vandat6x.github.io/nginx-update.sh <br /> 
-edit code qua vim hoặc các trình edit khác  sửa  NGINX_VERSION='1.9.13'  thành version mới nhất trên  trang chủ nginx. PHP 7.0 update: cd /tmp && http://vandat6x.github.io/php-update.sh <br >
-<p>cd /tmp<br />wget --no-check-certificate http://vandat6x.github.io/php7.sh <br />chmod +x php7.sh && ./php7.sh<br/> </p>
+Nginx update: cd /tmp && wget http://nginx4ops.github.io/nginx-update.sh <br /> 
+edit code qua vim hoặc các trình edit khác  sửa  NGINX_VERSION='1.9.13'  thành version mới nhất trên  trang chủ nginx. PHP 7.0 update: cd /tmp && http://nginx4ops.github.io/php-update.sh <br >Cài đặt wordpress: wget http://nginx4ops.github.io/wp.sh chmod +x wp.sh && ./wp.sh
+<p>cd /tmp<br />wget --no-check-certificate http://nginx4ops.github.io/php7.sh && chmod +x php7.sh && ./php7.sh<br/>  </p>
 <a href="http://vuvdat.net/">My website</a> | contact me:<a href="mailto:help@vuvdat.net"></a>help@vuvdat.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p>
 </div>
  

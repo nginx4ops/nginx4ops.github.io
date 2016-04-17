@@ -131,6 +131,7 @@ mv tz_e.php tz.php
 sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\$_SERVER\[PHP_SELF\]/\$_SERVER\['PHP_SELF'\]/g;s/\$_SERVER\['PHP_SELF'\]/htmlentities(\$_SERVER\[‘PHP_SELF’\])/g;s/eregi(\"phpinfo\",\$disFuns)/preg_match(\"phpinfo\/i\",\$disFuns)/g;s/mcrypt_cbc/mcrypt_encrypt/g;s/mysql_/mysqli_/g" ${OPENSHIFT_REPO_DIR}www/tz.php
 gear stop
 gear start
+echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất."
 read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh ./wp.sh .Nhấn [enter] để hoàn tất quá trình cài đặt"
-
+wget http://nginx4ops.github.io/wp.sh chmod +x wp.sh && ./wp.sh
 
