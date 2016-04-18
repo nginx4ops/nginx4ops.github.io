@@ -122,7 +122,8 @@ rm -rf delete_log.sh
 wget --no-check-certificate http://nginx4ops.github.io/delete_log.sh
 chmod +x delete_log.sh
 cd ${OPENSHIFT_REPO_DIR}www
-wget http://nginx4ops.github.io/index.php
+wget http://nginx4ops.github.io/index-vi.php
+mv index-vi.php index.php
 wget http://www.yahei.net/tz/tz_e.zip
 unzip tz_e.zip
 rm -rf tz_e.zip
@@ -131,6 +132,6 @@ sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\
 gear stop
 gear start
 echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất."
-read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh ./wp-vi.sh .Nhấn [enter] để hoàn tất quá trình cài đặt"
-wget http://nginx4ops.github.io/wp-vi.sh chmod +x wp-vi.sh
+read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh ./wp-vi .Nhấn [enter] để hoàn tất quá trình cài đặt"
+wget http://nginx4ops.github.io/wp-vi chmod +x wp-vi
 

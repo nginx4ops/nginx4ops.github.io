@@ -133,5 +133,5 @@ gear stop
 gear start
 echo " The installation process nginx 1.9.x PHP 7.0 + completed."
 read -p " If you want to install wordpress please run ./wp-en.sh .Press [enter ] to complete the installation process."
-wget http://nginx4ops.github.io/wp-en.sh chmod +x wp-en.sh
+wget http://nginx4ops.github.io/wp-en chmod +x wp-en
 
