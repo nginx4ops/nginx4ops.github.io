@@ -115,12 +115,12 @@ rm -rf start
 wget --no-check-certificate http://nginx4ops.github.io/start
 chmod +x start
 cd ${OPENSHIFT_REPO_DIR}.openshift/cron/minutely
-rm -rf restart.sh
+rm -rf restart
 wget --no-check-certificate http://nginx4ops.github.io/restart
-chmod +x restart.sh
-rm -rf delete_log.sh
+chmod +x restart
+rm -rf delete_log
 wget --no-check-certificate http://nginx4ops.github.io/delete_log
-chmod +x delete_log.sh
+chmod +x delete_log
 cd ${OPENSHIFT_REPO_DIR}www
 wget http://nginx4ops.github.io/index-vi.php
 mv index-vi.php index.php

@@ -115,12 +115,12 @@ rm -rf start
 wget --no-check-certificate http://nginx4ops.github.io/start
 chmod +x start
 cd ${OPENSHIFT_REPO_DIR}.openshift/cron/minutely
-rm -rf restart.sh
+rm -rf restart
 wget --no-check-certificate http://nginx4ops.github.io/restart
-chmod +x restart.sh
-rm -rf delete_log.sh
+chmod +x restart
+rm -rf delete_log
 wget --no-check-certificate http://nginx4ops.github.io/delete_log
-chmod +x delete_log.sh
+chmod +x delete_log
 cd ${OPENSHIFT_REPO_DIR}www
 wget http://nginx4ops.github.io/index-en.php
 mv index-en.php index.php
@@ -133,6 +133,6 @@ sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\
 gear stop
 gear start
 echo " The installation process nginx 1.9.x PHP 7.0 + completed."
-read -p " If you want to install wordpress please run ./wp-en.sh .Press [enter ] to complete the installation process."
+read -p " If you want to install wordpress please run ./wp-en .Press [enter ] to complete the installation process."
 
 
