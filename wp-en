@@ -1,9 +1,9 @@
 # Begin installation
 
 echo "===================================================="
-echo "=           Cài đặt wordpress tự động              ="
+echo "=           Auto wordpress setup                   ="
 echo "=                                                  ="
-echo "=                   By Vũ Đạt                      ="
+echo "=                   By Nami                        ="
 echo "=                  fb.com/bang.lanh.hp             ="
 echo "=                                                  ="     
 echo "=                                                  ="
@@ -12,13 +12,11 @@ echo "=                                                  ="
 echo "=                                                  =" 
 echo "=                                                  ="
 echo "=                                                  ="
-echo "=                  Cài đặt...                      ="
+echo "=               installation                       ="
 echo "=                                                  ="
 echo "===================================================="
-echo "Vui lòng cài Cartridges mysql 5.5 và phpmyadmin 4.0 để trước khi tiến hành cài đặt wordpress.
-read -p " nhấn [Enter] để tiếp tục..."
+echo "Please add Cartridges mysql 5.5 and phpmyadmin 4.0 before installation wordpress."
+read -p " press [Enter] to continue."
 cd ${OPENSHIFT_REPO_DIR}www
 rm index.php && wget https://wordpress.org/latest.zip && unzip latest.zip && cp -r wordpress/* ${OPENSHIFT_REPO_DIR}www   && rm -rf wordpress && rm -rf latest.zip
-echo " wordpress đã download xong. Nhập thông số db và tiến hành cài đặt wordpress thông qua domain(v.d: tenmiencuaban.com) "
-read -p "nếu bạn muốn cài tiếng việt cho wordpress nhấn [enter] để tiến hành cài đặt. Nhấn CTRL + C để dùng wordpress gốc (english)"
-cd wp-content && wget http://nginx4ops.github.io/vi.zip && unzip vi.zip && rm -rf vi.zip
+echo " wordpress have downloaded. input database and installation wordpress through domain(e.h: yourdomain.com). "
