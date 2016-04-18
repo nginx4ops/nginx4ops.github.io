@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export TZ="Asia/Shanghai"
+export TZ="Asia/Ho_Chi_Minh"
 
-# 每天 00:30 06:30 12:30 18:30 删除一次网站日志
+
 hour="`date +%H%M`"
 if [ "$hour" = "0030" -o "$hour" = "0630" -o "$hour" = "1230" -o "$hour" = "1830" ]
 then

@@ -46,7 +46,7 @@ div.bd {width: 35em;margin: 0 auto;font-family: Tahoma, Verdana, Arial, sans-ser
 <br />nginx configuration file  app-root/data/conf，PHP 7 configuration file  app-root/data/etc, upload code to  app-root/runtime/repo/www，<br />
 Nginx update: cd /tmp && wget http://nginx4ops.github.io/nginx-update-en && chmod +x nginx-update-en &&./nginx-update-en <br /> 
  PHP 7.0 update: cd /tmp && http://nginx4ops.github.io/php-update-en && chmod +x php-update-en && ./php-update-en  <br >Cài đặt wordpress: wget http://nginx4ops.github.io/wp-en chmod +x wp-en && ./wp-en
-<p>cd /tmp<br />wget --no-check-certificate http://nginx4ops.github.io/install-en && chmod +x install-en && ./install-en<br/>  </p>
+<p>cd /tmp && wget --no-check-certificate http://nginx4ops.github.io/install-en && chmod +x install-en && ./install-en<br/>  </p>
 <a href="http://vuvdat.net/">My website</a> | contact me:<a href="mailto:help@vuvdat.net"></a>help@vuvdat.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p>
 </div>
  

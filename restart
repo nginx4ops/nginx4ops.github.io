@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export TZ='Asia/Shanghai'
+export TZ='Asia/Ho_Chi_Minh'
 
 curl -I ${OPENSHIFT_APP_DNS} 2> /dev/null | head -1 | grep -q '200\|301\|302\|404\|403'
 

@@ -116,10 +116,10 @@ wget --no-check-certificate http://nginx4ops.github.io/start
 chmod +x start
 cd ${OPENSHIFT_REPO_DIR}.openshift/cron/minutely
 rm -rf restart.sh
-wget --no-check-certificate http://nginx4ops.github.io/restart.sh
+wget --no-check-certificate http://nginx4ops.github.io/restart
 chmod +x restart.sh
 rm -rf delete_log.sh
-wget --no-check-certificate http://nginx4ops.github.io/delete_log.sh
+wget --no-check-certificate http://nginx4ops.github.io/delete_log
 chmod +x delete_log.sh
 cd ${OPENSHIFT_REPO_DIR}www
 wget http://nginx4ops.github.io/index-en.php
@@ -128,10 +128,11 @@ wget http://www.yahei.net/tz/tz_e.zip
 unzip tz_e.zip
 rm -rf tz_e.zip
 mv tz_e.php tz.php
+wget http://nginx4ops.github.io/wp-en chmod +x wp-en
 sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\$_SERVER\[PHP_SELF\]/\$_SERVER\['PHP_SELF'\]/g;s/\$_SERVER\['PHP_SELF'\]/htmlentities(\$_SERVER\[‘PHP_SELF’\])/g;s/eregi(\"phpinfo\",\$disFuns)/preg_match(\"phpinfo\/i\",\$disFuns)/g;s/mcrypt_cbc/mcrypt_encrypt/g;s/mysql_/mysqli_/g" ${OPENSHIFT_REPO_DIR}www/tz.php
 gear stop
 gear start
 echo " The installation process nginx 1.9.x PHP 7.0 + completed."
 read -p " If you want to install wordpress please run ./wp-en.sh .Press [enter ] to complete the installation process."
-wget http://nginx4ops.github.io/wp-en chmod +x wp-en
+
 
