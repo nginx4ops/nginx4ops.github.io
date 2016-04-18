@@ -19,4 +19,7 @@ echo "Please add Cartridges mysql 5.5 and phpmyadmin 4.0 before installation wor
 read -p " press [Enter] to continue."
 cd ${OPENSHIFT_REPO_DIR}www
 rm index.php && wget https://wordpress.org/latest.zip && unzip latest.zip && cp -r wordpress/* ${OPENSHIFT_REPO_DIR}www   && rm -rf wordpress && rm -rf latest.zip
-echo " wordpress have downloaded. input database and installation wordpress through domain(e.h: yourdomain.com). "
+echo " wordpress have downloaded. input database and installation wordpress through domain(e.g: yourdomain.com). "
+echo "if you see error while you import content xml: Declaration of WP_Import::bump_request_timeout() should be compatible with WP_Importer::bump_request_timeout($val)  "
+echo "please go to https://goo.gl/EAKcfp to see how to fix error."
+read -p " press [Enter] to exit."
