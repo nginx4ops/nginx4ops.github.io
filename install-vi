@@ -23,11 +23,13 @@ echo  " vào http://php.net/downloads.php để xem phiên bản php mới nhấ
 read -p " nhấn [Enter] để tiếp tục..."
 unset TMOUT
 read -p "Nhập phiên bản nginx (v.d 1.9.14) : " NGINX_VERSION
-read -p "Nhap phien ban php (v.d 7.0.5) : " PHP_VERSION
+read -p "Nhập phiên bản php (v.d 7.0.5) : " PHP_VERSION
+read -p "Nhập server bạn muốn dùng để download php (us1 hoặc us2 hoặc us3) : " PHP_SRV
+echo "bắt đầu cài đặt"
 cd $OPENSHIFT_TMP_DIR
 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 tar xzf nginx-${NGINX_VERSION}.tar.gz
-wget http://nginx4ops.github.io/pcre-8.38.tar.gz
+wget http://dl.vuvdat.net/pcre-8.38.tar.gz
 tar xzf pcre-8.38.tar.gz
 git clone https://github.com/nginx4ops/ngx_cache_purge.git
 git clone https://github.com/nginx4ops/ngx_http_substitutions_filter_module.git
@@ -37,7 +39,7 @@ cd ${OPENSHIFT_TMP_DIR}nginx-${NGINX_VERSION}
 make -j4 && make install
 cd /tmp
 rm -rf *
-wget -O libmcrypt-2.5.8.tar.gz http://nginx4ops.github.io/libmcrypt-2.5.8.tar.gz
+wget -O libmcrypt-2.5.8.tar.gz http://dl.vuvdat.net/libmcrypt-2.5.8.tar.gz
 tar xzf libmcrypt-2.5.8.tar.gz
 cd libmcrypt-2.5.8
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
@@ -46,19 +48,19 @@ cd libltdl
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local --enable-ltdl-install
 make -j && make install
 cd ../..
-wget -O mhash-0.9.9.9.tar.gz http://nginx4ops.github.io/mhash-0.9.9.9.tar.gz
+wget -O mhash-0.9.9.9.tar.gz http://dl.vuvdat.net/mhash-0.9.9.9.tar.gz
 tar zxvf mhash-0.9.9.9.tar.gz
 cd mhash-0.9.9.9
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://nginx4ops.github.io/re2c-0.13.7.5.tar.gz
+wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://dl.vuvdat.net/re2c-0.13.7.5.tar.gz
 tar xzf re2c-0.13.7.5.tar.gz
 cd re2c-0.13.7.5
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget -O mcrypt-2.6.8.tar.gz http://nginx4ops.github.io/mcrypt-2.6.8.tar.gz
+wget -O mcrypt-2.6.8.tar.gz http://dl.vuvdat.net/mcrypt-2.6.8.tar.gz
 tar xzf mcrypt-2.6.8.tar.gz
 cd mcrypt-2.6.8
 export LDFLAGS="-L${OPENSHIFT_DATA_DIR}usr/local/lib -L/usr/lib"
@@ -69,7 +71,7 @@ touch malloc.h
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local --with-libmcrypt-prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget -O php-${PHP_VERSION}.tar.gz http://us3.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror
+wget -O php-${PHP_VERSION}.tar.gz http://${PHP_SRV}.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror
 tar xzf php-${PHP_VERSION}.tar.gz
 cd php-${PHP_VERSION}
 ./configure --prefix=$OPENSHIFT_DATA_DIR --with-config-file-path=${OPENSHIFT_DATA_DIR}etc --with-layout=GNU --with-mcrypt=${OPENSHIFT_DATA_DIR}usr/local --with-pear --with-pgsql --with-mysqli --with-pdo-mysql --with-pdo-pgsql --enable-pdo --with-pdo-sqlite --with-sqlite3 --with-openssl --with-zlib-dir --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-bz2 --with-libxml-dir --with-curl --with-gd --with-xsl --with-xmlrpc --with-mhash --with-gettext --with-readline --with-kerberos --with-pcre-regex --enable-json --enable-bcmath --enable-cli --enable-calendar --enable-dba --enable-wddx --enable-inline-optimization --enable-simplexml --enable-filter --enable-ftp --enable-tokenizer --enable-dom --enable-exif --enable-mbregex --enable-fpm --enable-mbstring --enable-gd-native-ttf --enable-xml --enable-xmlwriter --enable-xmlreader --enable-pcntl --enable-sockets --enable-zip --enable-soap --enable-shmop --enable-sysvsem --enable-sysvshm --enable-sysvmsg --enable-intl --enable-maintainer-zts --enable-opcache --enable-phar=shared --disable-debug --disable-fileinfo --disable-ipv6 --disable-rpath
@@ -112,23 +114,23 @@ cd /tmp
 rm -rf *
 cd ${OPENSHIFT_REPO_DIR}.openshift/action_hooks
 rm -rf start
-wget --no-check-certificate http://nginx4ops.github.io/start
+wget --no-check-certificate http://dl.vuvdat.net/start
 chmod +x start
 cd ${OPENSHIFT_REPO_DIR}.openshift/cron/minutely
 rm -rf restart
-wget --no-check-certificate http://nginx4ops.github.io/restart
+wget --no-check-certificate http://dl.vuvdat.net/restart
 chmod +x restart
 rm -rf delete_log
-wget --no-check-certificate http://nginx4ops.github.io/delete_log
+wget --no-check-certificate http://dl.vuvdat.net/delete_log
 chmod +x delete_log
 cd ${OPENSHIFT_REPO_DIR}www
-wget http://nginx4ops.github.io/index-vi.php
+wget http://dl.vuvdat.net/index-vi.php
 mv index-vi.php index.php
 wget http://www.yahei.net/tz/tz_e.zip
 unzip tz_e.zip
 rm -rf tz_e.zip
 mv tz_e.php tz.php
-wget http://nginx4ops.github.io/wp-vi && chmod +x wp-vi
+wget http://dl.vuvdat.net/wp-vi && chmod +x wp-vi
 sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\$_SERVER\[PHP_SELF\]/\$_SERVER\['PHP_SELF'\]/g;s/\$_SERVER\['PHP_SELF'\]/htmlentities(\$_SERVER\[‘PHP_SELF’\])/g;s/eregi(\"phpinfo\",\$disFuns)/preg_match(\"phpinfo\/i\",\$disFuns)/g;s/mcrypt_cbc/mcrypt_encrypt/g;s/mysql_/mysqli_/g" ${OPENSHIFT_REPO_DIR}www/tz.php
 gear stop
 gear start
