@@ -24,3 +24,4 @@ read -p "nếu bạn muốn cài tiếng việt cho wordpress nhấn [enter] đ�
 cd wp-content && wget http://nginx4ops.github.io/vi.zip && unzip vi.zip && rm -rf vi.zip
 echo "nếu bạn gặp lỗi khi import demo xml content: Declaration of WP_Import::bump_request_timeout() should be compatible with WP_Importer::bump_request_timeout($val)  "
 echo "hãy vào https://goo.gl/EAKcfp để xem cách sửa lỗi."
+read -p " nhấn [Enter] để tiếp thoát..."
