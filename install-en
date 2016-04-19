@@ -24,7 +24,6 @@ read -p " press [Enter] to continue."
 unset TMOUT
 read -p "Input nginx version(e.g 1.9.14) : " NGINX_VERSION
 read -p "Input php version (e.g 7.0.5) : " PHP_VERSION
-read -p "Input php server do you want  (us1 or us2 or us3) : " PHP_SRV
 echo " begin installation"
 cd $OPENSHIFT_TMP_DIR
 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
@@ -71,7 +70,7 @@ touch malloc.h
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local --with-libmcrypt-prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget -O php-${PHP_VERSION}.tar.gz http://${PHP_SRV}.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror
+wget -O php-${PHP_VERSION}.tar.gz http://us2.php.net/get/php-${PHP_VERSION}.tar.gz/from/this/mirror
 tar xzf php-${PHP_VERSION}.tar.gz
 cd php-${PHP_VERSION}
 ./configure --prefix=$OPENSHIFT_DATA_DIR --with-config-file-path=${OPENSHIFT_DATA_DIR}etc --with-layout=GNU --with-mcrypt=${OPENSHIFT_DATA_DIR}usr/local --with-pear --with-pgsql --with-mysqli --with-pdo-mysql --with-pdo-pgsql --enable-pdo --with-pdo-sqlite --with-sqlite3 --with-openssl --with-zlib-dir --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-bz2 --with-libxml-dir --with-curl --with-gd --with-xsl --with-xmlrpc --with-mhash --with-gettext --with-readline --with-kerberos --with-pcre-regex --enable-json --enable-bcmath --enable-cli --enable-calendar --enable-dba --enable-wddx --enable-inline-optimization --enable-simplexml --enable-filter --enable-ftp --enable-tokenizer --enable-dom --enable-exif --enable-mbregex --enable-fpm --enable-mbstring --enable-gd-native-ttf --enable-xml --enable-xmlwriter --enable-xmlreader --enable-pcntl --enable-sockets --enable-zip --enable-soap --enable-shmop --enable-sysvsem --enable-sysvshm --enable-sysvmsg --enable-intl --enable-maintainer-zts --enable-opcache --enable-phar=shared --disable-debug --disable-fileinfo --disable-ipv6 --disable-rpath
