@@ -47,7 +47,7 @@ div.bd {width: 35em;margin: 0 auto;font-family: Tahoma, Verdana, Arial, sans-ser
 Nginx update: cd /tmp && wget http://dl.vuvdat.net/nginx-update-vi && chmod +x nginx-update-vi &&./nginx-update-vi <br /> 
  PHP 7.0 update: cd /tmp && http://dl.vuvdat.net/php-update-vi && chmod +x php-update-vi && ./php-update-vi <br >Cài đặt wordpress: wget http://dl.vuvdat.net/wp-vi && chmod +x wp-vi && ./wp-vi
 <p>cd /tmp && wget --no-check-certificate http://dl.vuvdat.net/install-vi && chmod +x install-vi && ./install-vi<br/>  </p>
-<a href="http://vuvdat.net/">My website</a> | contact me:<a href="mailto:help@vuvdat.net"></a>help@vuvdat.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p>
+<a href="http://vuvdat.net/">My website</a> | contact me:<a href="mailto:help@vuvdat.net"></a>help@vuvdat.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p> | <a href="/php-benchmark">php benchmark</a>
 </div>
  
 	 

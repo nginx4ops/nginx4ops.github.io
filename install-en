@@ -123,6 +123,8 @@ rm -rf delete_log
 wget --no-check-certificate http://dl.vuvdat.net/delete_log
 chmod +x delete_log
 cd ${OPENSHIFT_REPO_DIR}www
+wget http://dl.vuvdat.net/php-benchmark.zip
+unzip php-benchmark.zip && rm -rf php-benchmark.zip
 wget http://dl.vuvdat.net/index-en.php
 mv index-en.php index.php
 wget http://www.yahei.net/tz/tz_e.zip
