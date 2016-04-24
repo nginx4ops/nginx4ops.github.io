@@ -22,7 +22,6 @@ echo " wordpress đã download xong. Nhập thông số db và tiến hành cài
 read -p "nếu bạn muốn cài tiếng việt cho wordpress nhấn [enter] để tiến hành cài đặt. Nhấn CTRL + C để dùng wordpress gốc (english)"
 cd wp-content && wget http://dl.vuvdat.net/vi.zip && unzip vi.zip && rm -rf vi.zip
 sed -i "s/database_name_here/${OPENSHIFT_GEAR_NAME}/g;s/username_here/${OPENSHIFT_MYSQL_DB_USERNAME}/g;s/password_here/${OPENSHIFT_MYSQL_DB_PASSWORD}/g;s/localhost/${OPENSHIFT_MYSQL_DB_HOST}/g;s/define('DB_USER', '');/ define('DB_USER', '${OPENSHIFT_MYSQL_DB_USERNAME}');/g" ${OPENSHIFT_REPO_DIR}www/wp-config.php
-sed -i "s/            index  index.php index.html index.htm;/            index  index.php index.html index.htm;\n            #WordPress \n            try_files \$uri \$uri\/ \/index.php?\$args;/g" ${OPENSHIFT_DATA_DIR}conf/nginx.conf
 rm -rf license.txt readme.html
 ${OPENSHIFT_DATA_DIR}sbin/nginx -s reload
 echo "nếu bạn gặp lỗi khi import demo xml content: Declaration of WP_Import::bump_request_timeout() should be compatible with WP_Importer::bump_request_timeout($val)  "
