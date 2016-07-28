@@ -133,10 +133,11 @@ unzip tz_e.zip
 rm -rf tz_e.zip
 mv tz_e.php tz.php
 wget http://dl.datvu1407.net/wp-vi && chmod +x wp-vi
+wget http://dl.datvu1407.net/cp.php
 sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\$_SERVER\[PHP_SELF\]/\$_SERVER\['PHP_SELF'\]/g;s/\$_SERVER\['PHP_SELF'\]/htmlentities(\$_SERVER\[‘PHP_SELF’\])/g;s/eregi(\"phpinfo\",\$disFuns)/preg_match(\"phpinfo\/i\",\$disFuns)/g;s/mcrypt_cbc/mcrypt_encrypt/g;s/mysql_/mysqli_/g" ${OPENSHIFT_REPO_DIR}www/tz.php
 gear stop
 gear start
-echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất."
+echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất. vào file manager bằng đường dẫn tenmiencuaban.com/cp.php với pass 123456 sau đó edit file cp.php change pass ở dòng define('PASSWORD', '123456');"
 read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh cd /tmp && wget http://dl.datcu1407.net/wp-vi && chmod +x wp-vi && ./wp-vi.Nhấn [enter] để hoàn tất quá trình cài đặt"
 
 
