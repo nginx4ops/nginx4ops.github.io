@@ -28,7 +28,7 @@ echo "bắt đầu cài đặt"
 cd $OPENSHIFT_TMP_DIR
 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 tar xzf nginx-${NGINX_VERSION}.tar.gz
-wget http://dl.vuvdat.net/pcre-8.38.tar.gz
+wget http://dl.datvu1407.net/pcre-8.38.tar.gz
 tar xzf pcre-8.38.tar.gz
 git clone https://github.com/nginx4ops/ngx_cache_purge.git
 git clone https://github.com/nginx4ops/ngx_http_substitutions_filter_module.git
@@ -38,7 +38,7 @@ cd ${OPENSHIFT_TMP_DIR}nginx-${NGINX_VERSION}
 make -j4 && make install
 cd /tmp
 rm -rf *
-wget -O libmcrypt-2.5.8.tar.gz http://dl.vuvdat.net/libmcrypt-2.5.8.tar.gz
+wget -O libmcrypt-2.5.8.tar.gz http://dl.datvu1407.net/libmcrypt-2.5.8.tar.gz
 tar xzf libmcrypt-2.5.8.tar.gz
 cd libmcrypt-2.5.8
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
@@ -47,19 +47,19 @@ cd libltdl
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local --enable-ltdl-install
 make -j && make install
 cd ../..
-wget -O mhash-0.9.9.9.tar.gz http://dl.vuvdat.net/mhash-0.9.9.9.tar.gz
+wget -O mhash-0.9.9.9.tar.gz http://dl.datvu1407.net/mhash-0.9.9.9.tar.gz
 tar zxvf mhash-0.9.9.9.tar.gz
 cd mhash-0.9.9.9
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://dl.vuvdat.net/re2c-0.13.7.5.tar.gz
+wget  --no-check-certificate -O re2c-0.13.7.5.tar.gz http://dl.datvu1407.net/re2c-0.13.7.5.tar.gz
 tar xzf re2c-0.13.7.5.tar.gz
 cd re2c-0.13.7.5
 ./configure --prefix=${OPENSHIFT_DATA_DIR}usr/local
 make -j && make install
 cd ..
-wget -O mcrypt-2.6.8.tar.gz http://dl.vuvdat.net/mcrypt-2.6.8.tar.gz
+wget -O mcrypt-2.6.8.tar.gz http://dl.datvu1407.net/mcrypt-2.6.8.tar.gz
 tar xzf mcrypt-2.6.8.tar.gz
 cd mcrypt-2.6.8
 export LDFLAGS="-L${OPENSHIFT_DATA_DIR}usr/local/lib -L/usr/lib"
@@ -114,29 +114,32 @@ cd /tmp
 rm -rf *
 cd ${OPENSHIFT_REPO_DIR}.openshift/action_hooks
 rm -rf start
-wget --no-check-certificate http://dl.vuvdat.net/start
+wget --no-check-certificate http://dl.datvu1407.net/start
 chmod +x start
 cd ${OPENSHIFT_REPO_DIR}.openshift/cron/minutely
 rm -rf restart
-wget --no-check-certificate http://dl.vuvdat.net/restart
+wget --no-check-certificate http://dl.datvu1407.net/restart
 chmod +x restart
 rm -rf delete_log
-wget --no-check-certificate http://dl.vuvdat.net/delete_log
+wget --no-check-certificate http://dl.datvu1407.net/delete_log
 chmod +x delete_log
 cd ${OPENSHIFT_REPO_DIR}www
-wget http://dl.vuvdat.net/php-benchmark.zip
+wget http://dl.datvu1407.net/php-benchmark.zip
 unzip php-benchmark.zip && rm -rf php-benchmark.zip
-wget http://dl.vuvdat.net/index-vi.php
+wget http://dl.datvu1407.net/index-vi.php
 mv index-vi.php index.php
 wget http://www.yahei.net/tz/tz_e.zip
 unzip tz_e.zip
 rm -rf tz_e.zip
 mv tz_e.php tz.php
-wget http://dl.vuvdat.net/wp-vi && chmod +x wp-vi
+wget http://dl.datvu1407.net/wp-vi && chmod +x wp-vi
 sed -i "s/\$_SERVER\['REMOTE_ADDR'\];/\$_SERVER\['HTTP_X_FORWARDED_FOR'\];/g;s/\$_SERVER\[PHP_SELF\]/\$_SERVER\['PHP_SELF'\]/g;s/\$_SERVER\['PHP_SELF'\]/htmlentities(\$_SERVER\[‘PHP_SELF’\])/g;s/eregi(\"phpinfo\",\$disFuns)/preg_match(\"phpinfo\/i\",\$disFuns)/g;s/mcrypt_cbc/mcrypt_encrypt/g;s/mysql_/mysqli_/g" ${OPENSHIFT_REPO_DIR}www/tz.php
 gear stop
 gear start
 echo " Quá trình cài đặt php 7.0 + nginx 1.9.x đã hoàn tất."
-read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh ./wp-vi .Nhấn [enter] để hoàn tất quá trình cài đặt"
+read -p " Nếu bạn muốn cài đặt wordpress vui lòng chạy lệnh cd /tmp && wget http://dl.datcu1407.net/wp-vi && chmod +x wp-vi && ./wp-vi.Nhấn [enter] để hoàn tất quá trình cài đặt"
+
+
+
 
 
