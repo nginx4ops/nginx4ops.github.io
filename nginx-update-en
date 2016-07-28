@@ -24,7 +24,7 @@ read -p "Input nginx version(e.g 1.9.14) : " NGINX_VERSION
 cd $OPENSHIFT_TMP_DIR
 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
 tar xzf nginx-${NGINX_VERSION}.tar.gz
-wget http://dl.vuvdat.net/pcre-8.38.tar.gz
+wget http://dl.datvu1407.net/pcre-8.38.tar.gz
 tar xzf pcre-8.38.tar.gz
 git clone https://github.com/nginx4ops/ngx_cache_purge.git
 git clone https://github.com/nginx4ops/ngx_http_substitutions_filter_module.git
