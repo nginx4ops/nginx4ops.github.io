@@ -44,10 +44,10 @@ div.bd {width: 35em;margin: 0 auto;font-family: Tahoma, Verdana, Arial, sans-ser
 <h1>NGINX 1.9 + PHP 7.0 Cho Openshift ！</h1>
 <p > Chào bạn. Cảm ơn bạn đã sử dụng bash shell cài đặt tự động  Nginx 1.9.X + PHP 7.0  của tôi</p> 
 <br />Tập tin cấu hình của nginx  app-root/data/conf，tập tin cấu hình  PHP 7  app-root/data/etc, upload code lên  app-root/runtime/repo/www，<br />
-Nginx update: cd /tmp && wget http://dl.vuvdat.net/nginx-update-vi && chmod +x nginx-update-vi &&./nginx-update-vi <br /> 
- PHP 7.0 update: cd /tmp && http://dl.vuvdat.net/php-update-vi && chmod +x php-update-vi && ./php-update-vi <br >Cài đặt wordpress: wget http://dl.vuvdat.net/wp-vi && chmod +x wp-vi && ./wp-vi
-<p>cd /tmp && wget --no-check-certificate http://dl.vuvdat.net/install-vi && chmod +x install-vi && ./install-vi<br/>  </p>
-<a href="http://vuvdat.net/">My website</a> | contact me:<a href="mailto:help@vuvdat.net"></a>help@vuvdat.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p> | <a href="/php-benchmark">php benchmark</a>
+Nginx update: cd /tmp && wget http://dl.datvu1407.net/nginx-update-vi && chmod +x nginx-update-vi &&./nginx-update-vi <br /> 
+ PHP 7.0 update: cd /tmp && http://dl.datvu1407.net/php-update-vi && chmod +x php-update-vi && ./php-update-vi <br >Cài đặt wordpress: wget http://dl.datvu1407.net/wp-vi && chmod +x wp-vi && ./wp-vi
+<p>cd /tmp && wget --no-check-certificate http://dl.datvu1407.net/install-vi && chmod +x install-vi && ./install-vi<br/>  </p>
+<a href="http://datvu1407.net/">My website</a> | contact me:<a href="mailto:datvu@datvu1407.net"></a>help@datvu1407.net  | <p class="flip1">server monitor</p> | <p class="flip" >phpinfo</p> | <a href="/php-benchmark">php benchmark</a> | <a href="/cp.php">web control panel</a>
 </div>
  
 	 
