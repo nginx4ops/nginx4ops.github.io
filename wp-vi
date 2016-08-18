@@ -18,7 +18,7 @@ echo "===================================================="
 echo "Vui lòng cài Cartridges mysql 5.5 và phpmyadmin 4.0 để trước khi tiến hành cài đặt wordpress."
 read -p " nhấn [Enter] để tiếp tục..."
 cd ${OPENSHIFT_REPO_DIR}www && rm index.php && wget https://wordpress.org/latest.zip && unzip latest.zip && cp -r wordpress/* ${OPENSHIFT_REPO_DIR}www   && rm -rf wordpress && rm -rf latest.zip && mv wp-config-sample.php wp-config.php
-echo " wordpress đã download xong. Nhập thông số db và tiến hành cài đặt wordpress thông qua domain(v.d: tenmiencuaban.com) "
+read -p  " wordpress đã download xong.  Tiến hành cài đặt wordpress thông qua domain(v.d: tenmiencuaban.com) "
 sed -i "s/database_name_here/${OPENSHIFT_GEAR_NAME}/g;s/username_here/${OPENSHIFT_MYSQL_DB_USERNAME}/g;s/password_here/${OPENSHIFT_MYSQL_DB_PASSWORD}/g;s/localhost/${OPENSHIFT_MYSQL_DB_HOST}/g;s/define('DB_USER', '');/ define('DB_USER', '${OPENSHIFT_MYSQL_DB_USERNAME}');/g" ${OPENSHIFT_REPO_DIR}www/wp-config.php
 rm -rf license.txt readme.html
 ${OPENSHIFT_DATA_DIR}sbin/nginx -s reload
