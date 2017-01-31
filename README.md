@@ -10,7 +10,7 @@ Hướng dẫn cài đặt</br>
 
 
  <h3>PHP 7 + nginx</h3></br>
-cd /tmp && wget --no-check-certificate dl.datvu1407.net/install-vi && chmod +x install-vi && ./install-vi</br>
+cd /tmp && wget --no-check-certificate http://nginx4ops.github.io/install-vi && chmod +x install-vi && ./install-vi</br>
 
 
 <h2> sau khi cài xong có 1 file có tên là tz.php file đó dùng để test các thông số </h2>
